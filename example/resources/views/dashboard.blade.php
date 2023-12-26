@@ -18,6 +18,11 @@
             </div>
         </div>
     </div>
+        @foreach ($campaigns as $campaign)
+                @if($campaign->fotoGalangDana)
+                    <img src="{{ asset('/Kampanye/' . $campaign->fotoGalangDana) }}" alt="{{ $campaign->judulKampanye }}">
+                @endif
+        @endforeach
     <x-danger-button>
         <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
             <x-nav-link :href="route('galangdana.page')" :active="request()->routeIs('galangdana.page')">

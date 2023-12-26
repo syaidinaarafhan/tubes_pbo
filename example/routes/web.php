@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/GalangDana/tahap2', [GalangDanaController::class, 'storetahap2'])->name('galangdana.storetahap2');
     Route::get('/GalangDana/tahap3', [GalangDanaController::class, 'tahap3'])->name('galangdana.tahap3');
     Route::post('/GalangDana/tahap3', [GalangDanaController::class, 'storeTahap3'])->name('galangdana.storeTahap3');
+    Route::get('/dashboard', [GalangDanaController::class, 'dashboard'])->name('dashboard');
 });
 
 require __DIR__.'/auth.php';

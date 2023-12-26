@@ -97,18 +97,9 @@ class GalangDanaController extends Controller
         }
     }
 
-    public function getFoto(){
-        $data = session()->get('galang_dana_data');
-
-        $imagePaths = [];
-
-        if (isset($data['fotoGalangDana']) && is_array($data['fotoGalangDana'])) {
-            foreach ($data['fotoGalangDana'] as $fileName) {
-                $imagePaths[] = public_path('Kampanye/' . $fileName);
-            }
-        }
-
-        return view('galangdana.fotoKamp', ['imagePaths' => $imagePaths]);
+    public function dashboard(){
+        $campaigns = GalangDanaModel::get();
+        return view('dashboard', compact('campaigns'));
     }
     
 }
